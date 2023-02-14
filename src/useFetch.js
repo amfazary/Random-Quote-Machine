@@ -6,7 +6,7 @@ const useFetch = (url) => {
     let [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
     
-
+    
     useEffect(() => {
         setTimeout(() => {
             fetch(url)
@@ -14,10 +14,11 @@ const useFetch = (url) => {
                     if(!res.ok) {
                         throw Error('that resource is not working');
                     }
+                    
                     return res.json();
                 })
                 .then(data => {
-                    setQuotes(data.map(function(el,index) {
+                    setQuotes(data.quotes.map(function(el,index) {
                         var o = Object.assign({}, el);
                         o.id = index;
                         return o;}));

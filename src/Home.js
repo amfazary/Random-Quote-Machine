@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 
 const Home = () => {
     const [rndId, setRndId] = useState(Math.floor(Math.random() * 101));
-    const { quotes, isPending, error } = useFetch('http://localhost:8000/quotes');
+    const { quotes, isPending, error } = useFetch('https://raw.githubusercontent.com/amfazary/Random-Quote-Machine/main/src/Quotes.json');
     let quote = null;
     let tweet = null;
     let colors = [{background: "#0E1A45", text: "#FF9176"},
